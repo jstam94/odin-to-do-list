@@ -1,1 +1,1 @@
-console.log("Hi from webpack");
+(()=>{"use strict";console.log(class{constructor(s,t,i,e,o){this.title=s,this.description=t,this.dueDate=i,this.priorty=e,this.notes=o,this.isComplete=!1,this.inProgess=!1}})})();

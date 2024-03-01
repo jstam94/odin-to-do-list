@@ -1,1 +1,3 @@
-console.log('Hi from webpack');
+import Task from './task.js'
+
+console.log(Task)
