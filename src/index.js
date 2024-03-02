@@ -12,9 +12,12 @@ let DOMController = (function(){
     const nav = document.querySelector('.sidebar')
 
     function render(){  
+        let projectIndex = 0;
         nav.innerHTML = ``
         data.get().forEach(project => {
         const li = document.createElement('li');
+        li.setAttribute('data-index', projectIndex)
+        projectIndex ++;
         li.textContent = project.name;
         nav.appendChild(li)
     });
