@@ -53,6 +53,20 @@ function getSaved(){
 
 let DOMController = (function(){
     document.querySelector('.save').addEventListener('click', () => setSaved())
-    document.querySelector('.test').addEventListener('click', () => console.log('Logging Data', data))
-    // return {render}
+    document.querySelector('.test').addEventListener('click', () => { 
+        console.log('Logging Data', data)
+        render();
+    })
+
+    const nav = document.querySelector('.sidebar')
+
+    function render(){
+    nav.innerHTML = ``
+    data.forEach(project => {
+        const li = document.createElement('li');
+        li.textContent = project.name;
+        nav.appendChild(li)
+    });
+}
+    return {render}
 })()
