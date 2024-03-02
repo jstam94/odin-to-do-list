@@ -48,6 +48,10 @@ let DOMController = (function(){
             div.appendChild(title)
 
             div.appendChild(lineBuilder(task, `description`))
+            div.appendChild(lineBuilder(task, `dueDate`))
+            div.appendChild(lineBuilder(task, `priority`))
+            div.appendChild(lineBuilder(task, `isComplete`))
+            div.appendChild(lineBuilder(task, `inProgress`))
 
             // let description = document.createElement('div')
             // description.className = 'task-prop';
