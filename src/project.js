@@ -6,12 +6,11 @@ export default class Project{
     constructor(name, description){
         this.name = name;
         this.description = description
-        this._tasks = ['hello from tasklist'];
+        this._tasks = [];
 }
     addTask(title, description, dueDate, priorty, notes){
         const task = new Task (title, description, dueDate, priorty, notes);
         this._tasks.push(task);
-        console.log('addTask called')
     }
 
     removeTask(task){
