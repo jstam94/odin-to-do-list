@@ -4,7 +4,16 @@ import Task from "./task.js"
 
 let data = (function data(){
     let data = [];
-    let get = () => data;
+    const get = () => data;
+
+    let selectedProject = null;
+    const getSelected = () => selectedProject;
+
+    function selectProject(index){
+        if (!data[index]) return;
+        selectedProject = index;
+    }
+
     
     function addProject(name, description){
         data.push(new Project(name, description)) 
@@ -53,7 +62,7 @@ let data = (function data(){
         return data
     }
     
-    return { get, addProject, save }
+    return { get, addProject, save, selectProject, getSelected }
     })()
 
 export default data;

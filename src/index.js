@@ -5,8 +5,7 @@ import data from './data.js'
 let DOMController = (function(){
     document.querySelector('.save').addEventListener('click', () => data.save())
     document.querySelector('.test').addEventListener('click', () => { 
-        console.log('Logging Data', data.get())
-        render();
+        render()
     })
 
     const nav = document.querySelector('.sidebar')
@@ -19,7 +18,12 @@ let DOMController = (function(){
         li.setAttribute('data-index', projectIndex)
         projectIndex ++;
         li.textContent = project.name;
+        li.addEventListener('click', () =>{
+        data.selectProject(li.getAttribute('data-index'))
+        console.log('Logging Current', data.getSelected())
+        })
         nav.appendChild(li)
+
     });
 }
     return {render}
