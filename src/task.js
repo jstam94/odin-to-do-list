@@ -8,4 +8,8 @@ export default class Task {
         this.isComplete = false;
         this.inProgess = false;
     }
+
+    testMethod(){
+        console.log("Test Method to confirm inheritance")
+    }
 }
